@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+categorio_comercial,Comercial Categoria,model_ba_concesionario_categoria,concesionario_comercial,1,1,1,0
+categoria_gerente,Gerente Categoria,model_ba_concesionario_categoria,concesionario_gerente,1,1,1,1
+coche_comercial,Comercial Coche,model_ba_concesionario_coche,concesionario_comercial,1,1,1,0
+coche_gerente,Gerente Coche,model_ba_concesionario_coche,concesionario_gerente,1,1,1,1
+cliente_comercial,Comercial Cliente,model_ba_concesionario_cliente,concesionario_comercial,1,1,1,0
+cliente_gerente,Gerente Cliente,model_ba_concesionario_cliente,concesionario_gerente,1,1,1,1
+marca_comercial,Comercial Marca,model_ba_concesionario_marca,concesionario_comercial,1,1,1,0
+marca_gerente,Gerente Marca,model_ba_concesionario_marca,concesionario_gerente,1,1,1,1
+factura_comercial,Comercial Factura,model_ba_concesionario_factura,concesionario_comercial,1,1,1,0
+factura_gerente,Gerente Factura,model_ba_concesionario_factura,concesionario_gerente,1,1,1,1

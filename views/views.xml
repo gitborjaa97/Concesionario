@@ -1,0 +1,311 @@
+<odoo>
+  <data>
+
+    <record id="ba_concesionario_marca_tree" model="ir.ui.view">
+      <field name="name">ba.concesionario.marca.tree</field>
+      <field name="model" >ba.concesionario.marca</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="country_id"/>
+        </tree>
+      </field> 
+    </record>
+
+    <record id="ba_concesionario_marca_form" model="ir.ui.view">
+      <field name="name">ba.concesionario.marca.form</field>
+      <field name="model" >ba.concesionario.marca</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group  colspan="2" col="2">
+              <field name="name"/>
+              <field name="country_id"/>
+            </group>
+          </sheet>
+        </form>
+      </field> 
+    </record>
+
+    <record id="ba_concesionario_categoria_tree" model="ir.ui.view">
+      <field name="name">ba.concesionario.categoria.tree</field>
+      <field name="model" >ba.concesionario.categoria</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name" />
+            <field name="descripcion"/>
+        </tree>
+      </field> 
+    </record>
+
+    <record id="ba_concesionario_categoria_form" model="ir.ui.view">
+      <field name="name">ba.concesionario.categoria.form</field>
+      <field name="model" >ba.concesionario.categoria</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group  colspan="2" col="2">
+              <field name="name"/>
+              <field name="descripcion"/>
+            </group>
+          </sheet>
+        </form>
+      </field> 
+    </record>
+
+    <record id="ba_concesionario_coche_tree" model="ir.ui.view">
+      <field name="name">ba.concesionario.coche.tree</field>
+      <field name="model" >ba.concesionario.coche</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="disponibilidad"/>
+            <field name="name"/>
+            <field name="marca_id"/>
+            <field name="anio"/>
+            <field name="precio"/>
+            <field name="kms"/>
+        </tree>
+      </field> 
+    </record>
+
+    <record id="ba_concesionario_coche_search" model="ir.ui.view">
+      <field name="name">ba.concesionario.coche.search</field>
+      <field name="model" >ba.concesionario.coche</field>
+      <field name="arch" type="xml">
+        <search>
+            <field name="marca_id" string="Marca"/>
+            <field name="categoria_ids" string="Categoria"/>
+            <filter name="disponibles" domain="[('disponibilidad','=',True)]" string="Disponibles"/>
+        </search>
+      </field> 
+    </record>
+
+    <record id="ba_concesionario_coche_form" model="ir.ui.view">
+      <field name="name">ba.concesionario.coche.form</field>
+      <field name="model" >ba.concesionario.coche</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <h1>
+              <div>
+                <field name="name" style="width: 40%" placeholder='Nombre'/>
+                <field name="foto" style="margin-left: 45%" widget="image" options="{'size': [100, 100]}"/>
+              </div>              
+            </h1>
+            <hr/>
+            <group string="Categorias" colspan="1" col="1">
+              <div>
+                <field name="categoria_ids"/>
+              </div>
+            </group>
+            <group string='Infromacion General'  colspan="2" col="4">
+              <field name="marca_id" />
+              <field name="anio" placeholder=" "/>
+              <field name="n_plazas"/>
+              <field name="usado"/>
+              <field name="kms"/>
+              <field name="n_puertas"/>
+              <field name="precio"/>
+              <field name="disponibilidad"/>
+            </group>
+            <group string='Motor'  colspan="2" col="4">
+              <field name="transmision"/>
+              <field name="combustible"/>
+              <field name="cilindrada"/>
+              <field name="cvs"/>
+            </group>
+          </sheet>
+        </form>
+      </field> 
+    </record>
+
+    <record id="ba_concesionario_cliente_tree" model="ir.ui.view">
+      <field name="name">ba.concesionario.cliente.tree</field>
+      <field name="model" >ba.concesionario.cliente</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="email"/>
+            <field name="movil"/>
+        </tree>
+      </field> 
+    </record>
+
+    <record id="ba_concesionario_cliente_form" model="ir.ui.view">
+      <field name="name">ba.concesionario.cliente.form</field>
+      <field name="model" >ba.concesionario.cliente</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <h1>
+              <div>
+                <field name="name" style="width: 40%" placeholder='Nombre'/>
+                <field name="foto" style="margin-left: 45%" widget="image" options="{'size': [100, 100]}"/>
+              </div>              
+            </h1>
+            <hr/>
+            <group colspan="2" col="4">
+              <group string='Direccion'  colspan="2" col="2">
+                <field name="calle" />
+                <field name="cp"/>
+                <field name="ciudad"/>
+              </group>
+              <group string='Contacto'  colspan="2" col="2">
+                <field name="email"/>
+                <field name="movil"/>
+                <field name="fijo"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field> 
+    </record>
+
+    <record id="ba_concesionario_factura_tree" model="ir.ui.view">
+      <field name="name">ba.concesionario.factura.tree</field>
+      <field name="model" >ba.concesionario.factura</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="vendedor"/>
+            <field name="cliente"/>
+        </tree>
+      </field> 
+    </record>
+
+    <record id="ba_concesionario_factura_form" model="ir.ui.view">
+      <field name="name">ba.concesionario.factura.form</field>
+      <field name="model" >ba.concesionario.factura</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <h1>              
+              <field name="name"/>
+            </h1>          
+            <group string='Informacion de compra' colspan="2" col="4">
+              <field name="vendedor" style="width: 60%"/>
+              <field name="tipo_pago" style="width: 40%"/>
+              <field name="cliente" style="width: 60%"/>
+              <field name="financion" style="width: 40%"/>
+              <field name="fecha_compra" style="width: 40%"/>
+            </group>
+            <group string='Productos' colspan="2" col="2">
+              <field name="coche_ids" widget="many2many"/>
+              <field name="total"/>
+            </group>
+          </sheet>
+        </form>
+      </field> 
+    </record>
+
+    <record id="ba_concesionario_coche_action_window" model="ir.actions.act_window">
+      <field name="name">Coches</field>
+      <field name="res_model">ba.concesionario.coche</field>
+      <field name="context">{"search_default_disponibles":1}</field>
+      <field name="view_mode">tree,form</field>      
+    </record>
+
+    <record id="ba_concesionario_cliente_action_window" model="ir.actions.act_window">
+      <field name="name">Clientes</field>
+      <field name="res_model">ba.concesionario.cliente</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="ba_concesionario_categoria_action_window" model="ir.actions.act_window">
+      <field name="name">Categorias</field>
+      <field name="res_model">ba.concesionario.categoria</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="ba_concesionario_marca_action_window" model="ir.actions.act_window">
+      <field name="name">Marcas</field>
+      <field name="res_model">ba.concesionario.marca</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="ba_concesionario_factura_action_window" model="ir.actions.act_window">
+      <field name="name">Facturas</field>
+      <field name="res_model">ba.concesionario.factura</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="ba_concesionario_menu_root" name="Coches Avalos" />
+
+    <menuitem id="ba_concesionario_submenu_coche"  name="Coches" parent="ba_concesionario_menu_root"/>
+
+    <menuitem id="ba_concesionario_submenu_ventas"  name="Ventas" parent="ba_concesionario_menu_root"/>
+
+    <menuitem id="ba_concesionario_cliente"  name="Clientes" parent="ba_concesionario_submenu_ventas" 
+    sequence="1" action="ba_concesionario_cliente_action_window"/>
+
+    <menuitem id="ba_concesionario_factura"  name="Facturas" parent="ba_concesionario_submenu_ventas" 
+    sequence="1" action="ba_concesionario_factura_action_window"/>
+
+    <menuitem id="ba_concesionario_coche"  name="Coches" parent="ba_concesionario_submenu_coche" 
+    sequence="1" action="ba_concesionario_coche_action_window"/>
+
+    <menuitem id="ba_concesionario_marca"  name="Marcas" parent="ba_concesionario_submenu_coche" 
+    sequence="2" action="ba_concesionario_marca_action_window"/>
+
+    <menuitem id="ba_concesionario_categoria"  name="Categorias" parent="ba_concesionario_submenu_coche" 
+    sequence="2" action="ba_concesionario_categoria_action_window"/>
+
+
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="concesionario.list">
+      <field name="name">concesionario list</field>
+      <field name="model">concesionario.concesionario</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="concesionario.action_window">
+      <field name="name">concesionario window</field>
+      <field name="res_model">concesionario.concesionario</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="concesionario.action_server">
+      <field name="name">concesionario server</field>
+      <field name="model_id" ref="model_concesionario_concesionario"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="concesionario" id="concesionario.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="concesionario.menu_1" parent="concesionario.menu_root"/>
+    <menuitem name="Menu 2" id="concesionario.menu_2" parent="concesionario.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="concesionario.menu_1_list" parent="concesionario.menu_1"
+              action="concesionario.action_window"/>
+    <menuitem name="Server to list" id="concesionario" parent="concesionario.menu_2"
+              action="concesionario.action_server"/>
+-->
+  </data>
+</odoo>

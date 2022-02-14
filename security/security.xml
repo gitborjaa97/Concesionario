@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">    
+        <record id="concesionario_id" model="ir.module.category">
+            <field name="name">Concesionario</field>
+            <field name="description">Gestion de un concesionario</field>
+        </record>
+
+        <record id="concesionario_comercial" model="res.groups">
+            <field name="name">Comercial</field>
+            <field name="comment">Empleado con permisos básicos</field>
+            <field name="category_id" ref="concesionario_id"/>
+            <field name="users" eval="[(4,ref('base.group_user'))]"/>
+        </record>
+        
+        <record id="concesionario_gerente" model="res.groups">
+            <field name="name">Gerente</field>
+            <field name="comment">Empleado con permisos de supervisor</field>
+            <field name="category_id" ref="concesionario_id"/>
+            <field name="implied_ids" eval="[(4,ref('concesionario_comercial'))]"/>
+            <field name="users" eval="[(4,ref('base.user_root')),(4,ref('base.user_admin'))]"/>
+        </record>
+    </data>
+</odoo>
